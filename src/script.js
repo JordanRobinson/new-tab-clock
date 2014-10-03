@@ -37,14 +37,10 @@ body.setAttribute('style', 'background-color:#272822');
 body.appendChild(container);
 
 var update = function() {
-	var date = new Date;
-
-	var seconds = date.getSeconds();
-	var minutes = date.getMinutes();
-	var hour = date.getHours();
+	var date = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");;
 
 	clockHolder.removeChild(currentTime);
-	currentTime = document.createTextNode(hour + ':' + minutes + ':' + seconds);
+	currentTime = document.createTextNode(date);
 	clockHolder.appendChild(currentTime);
 	window.setTimeout(update, 1000);
 }
