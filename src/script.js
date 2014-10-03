@@ -37,7 +37,7 @@ body.setAttribute('style', 'background-color:#272822');
 body.appendChild(container);
 
 var update = function() {
-	var date = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");;
+	var date = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
 
 	clockHolder.removeChild(currentTime);
 	currentTime = document.createTextNode(date);
