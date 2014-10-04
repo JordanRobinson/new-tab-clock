@@ -11,7 +11,17 @@
 var body = document.getElementsByTagName('body')[0];
 var container = document.createElement('div');
 var clockHolder = document.createElement('div');
-var currentTime = document.createTextNode(' ');
+var currentTime = document.createElement('span');
+var timeText = document.createTextNode(' ');
+
+body.setAttribute('style', 'background-color:#272822');
+
+container.setAttribute('style', //vertically centre that fool
+	'position: absolute;' +
+	'top: 50%;' + 
+	'margin-top: -200px;' +
+	'left: 0;' +
+	'width: 100%;');
 
 clockHolder.setAttribute('style', 
 	'font-size: 10rem;' +
@@ -22,27 +32,26 @@ clockHolder.setAttribute('style',
 	'font-weight: lighter;' +
 	'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif');
 
-container.setAttribute('style', //vertically centre that fool
-	'position: absolute;' +
-	'top: 50%;' + 
-	'margin-top: -200px;' +
-	'left: 0;' +
-	'width: 100%;');
+// currentTime.setAttribute('style', 
+// 	'float: left;' + 
+// 	'width: 600px;' + //fix this
+// 	'border-bottom: 1px solid #FF4800;');
 
+currentTime.appendChild(timeText);
 clockHolder.appendChild(currentTime);
-
 container.appendChild(clockHolder);
-
-body.setAttribute('style', 'background-color:#272822');
 body.appendChild(container);
 
 var update = function() {
-	var date = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+	var date = new Date()
+	var dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+	var millis = date.getMilliseconds();
 
-	clockHolder.removeChild(currentTime);
-	currentTime = document.createTextNode(date);
-	clockHolder.appendChild(currentTime);
-	window.setTimeout(update, 1000);
+	currentTime.removeChild(timeText);
+	timeText = document.createTextNode(dateString);
+	currentTime.appendChild(timeText);
+
+	window.setTimeout(update, 1000 - millis);
 }
 
 update();
