@@ -7,10 +7,25 @@
 ## Usage
 @TODO: update usage instructions.
 
+## Contributing
+```sh
+$ git clone https://github.com/JordanRobinson/new-tab-clock
+```
+
+```sh
+$ npm install
+```
+
+```sh
+$ grunt
+```
+
+Make changes in `src/`
+
 ## License
 Copyright (c) 2014 [Jordan Robinson](http://jordanrobinson.co.uk). 
 
-Licensed under the MIT license.
+Licensed under the [MIT license](https://github.com/JordanRobinson/new-tab-clock/blob/master/LICENSE.md).
 
 [travis-url]: http://travis-ci.org/furzeface/new-tab-clock
 [travis-image]: https://secure.travis-ci.org/furzeface/new-tab-clock.svg?branch=master

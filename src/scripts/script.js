@@ -32,15 +32,15 @@ container.appendChild(currentTime);
 body.appendChild(container);
 
 var update = function () {
-	var date = new Date(),
-	dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1'),
-	millis = date.getMilliseconds();
+  var date = new Date(),
+  dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1'),
+  millis = date.getMilliseconds();
 
-	currentTime.removeChild(timeText);
-	timeText = document.createTextNode(dateString);
-	currentTime.appendChild(timeText);
+  currentTime.removeChild(timeText);
+  timeText = document.createTextNode(dateString);
+  currentTime.appendChild(timeText);
 
-	window.setTimeout(update, 1000 - millis);
+  window.setTimeout(update, 1000 - millis);
 };
 
 update();
