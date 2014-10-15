@@ -14,23 +14,18 @@ var clockHolder = document.createElement('div');
 var currentTime = document.createElement('span');
 var timeText = document.createTextNode(' ');
 
-body.setAttribute('style', 'background-color:#272822');
+body.setAttribute('style', 'background-color:#262626');
 
 container.setAttribute('style',
+  'color: #DFDFDF;' +
+  'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;' +
+  'font-size: 10rem;' +
+  'font-weight: lighter;' +
   // Vertically centre that fool!
   'position: absolute;' +
   'top: 50%;' +
   'left: 50%;' +
-  'text-align: center;' +
-  'transform: translate(-50%,-50%);' +
-  'width: 100%;'
-  );
-
-clockHolder.setAttribute('style',
-  'color: #DFDFDF;' +
-  'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif' +
-	'font-size: 10rem;' +
-  'font-weight: lighter;'
+  'transform: translate(-50%,-50%);'
   );
 
 currentTime.appendChild(timeText);
