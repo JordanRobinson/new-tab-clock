@@ -3,9 +3,12 @@ module.exports = function(grunt) {
   /* jshint camelcase: false */
 
   // Reads package.json and dynamically loads all Grunt tasks
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies', pattern: ['assemble', 'grunt-*']});
+  require('load-grunt-tasks')(grunt, {
+    scope: 'devDependencies',
+    pattern: ['grunt-*']
+  });
 
-  // Time all the things
+  // Time all of the things
   require('time-grunt')(grunt);
 
   // Go!
@@ -15,18 +18,14 @@ module.exports = function(grunt) {
       banner: '/* <%= pkg.name %> :: Latest build: <%= grunt.template.today(\'dd/mm/yyyy, h:MM:ss TT\') %> */\n'
     },
     config: {
+      // File settings
+      gruntfile: 'Gruntfile.js',
       // Src settings
       src: 'src',
-      srcAssets: 'assets',
-      srcStyles: 'styles',
-      srcSass: 'sass',
       srcScripts: 'scripts',
       // Dist settings
       dist: 'dist',
-      distAssets: '_assets',
-      distStyles: 'styles',
-      distScripts: 'scripts',
-      mainCss: 'main.css'
+      distScripts: 'scripts'
     },
 
     // Watchers
@@ -36,24 +35,15 @@ module.exports = function(grunt) {
         '<%= config.src %>/**/*.html'
         ],
         tasks: [
-        'copy:html'
-        ]
-      },
-      styles: {
-        files: [
-        '<%= config.src %>/<%= config.srcAssets %>/<%= config.srcStyles %>/<%= config.srcSass %>/**/*.scss'
-        ],
-        tasks: [
-        'build_styles'
+        'build_html'
         ]
       },
       scripts: {
         files: [
-        '<%= config.src %>/<%= config.srcAssets %>/<%= config.srcScripts %>/**/*.js',
+        '<%= config.src %>/<%= config.srcScripts %>/**/*.js',
         ],
         tasks: [
-        'build_scripts',
-        'modernizr'
+        'build_scripts'
         ]
       },
       livereload: {
@@ -80,9 +70,8 @@ module.exports = function(grunt) {
         usePackage: true
       },
       all: [
-      '<%= config.src %>/**/*.{js,scss}',
-      '<%= config.src %>/**/*.{html,txt}',
-      'Gruntfile.js'
+      '<%= config.src %>/**/*.{html,js,txt}',
+      '<%= config.gruntfile %>'
       ]
     },
 
@@ -178,14 +167,13 @@ module.exports = function(grunt) {
       },
       all: [
       '<%= config.src %>/<%= config.srcScripts %>/**/*.js',
-      'Gruntfile.js'
+      '<%= config.gruntfile %>'
       ]
     },
 
     concat: {
       scripts: {
         src: [
-        // combined scripts
         '<%= config.src %>/<%= config.srcScripts %>/*.js',
         ],
         dest: '<%= config.dist %>/script.js'
@@ -207,7 +195,7 @@ module.exports = function(grunt) {
   });
 
 
-  // Task aliases.
+  // Task aliases
   grunt.registerTask('build_html', [
     'clean:html',
     'copy:html',
@@ -227,10 +215,15 @@ module.exports = function(grunt) {
     'build_scripts'
     ]);
 
-  // Default task.
+  // Default task
   grunt.registerTask('default', [
     'build_dev',
     'connect:livereload',
     'watch'
+    ]);
+
+  // CI Build task
+  grunt.registerTask('travis', [
+    'build_dev'
     ]);
 };
