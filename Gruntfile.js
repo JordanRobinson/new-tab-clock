@@ -171,15 +171,6 @@ module.exports = function(grunt) {
       ]
     },
 
-    concat: {
-      scripts: {
-        src: [
-        '<%= config.src %>/<%= config.srcScripts %>/*.js',
-        ],
-        dest: '<%= config.dist %>/script.js'
-      }
-    },
-
     uglify: {
       options: {
         banner: '<%= meta.banner %>',
@@ -204,8 +195,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build_scripts', [
     'clean:scripts',
-    'newer:jshint',
-    'concat:scripts',
+    'jshint',
     'copy:scripts',
     'uglify'
     ]);
