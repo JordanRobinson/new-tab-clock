@@ -1,0 +1,50 @@
+{
+  "name": "new-tab-clock",
+  "title": "New Tab Clock",
+  "description": "Open tab! Receive clock!",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JordanRobinson/new-tab-clock"
+  },
+  "issues": "https://github.com/JordanRobinson/new-tab-clock/issues",
+  "homepage": "https://github.com/JordanRobinson/new-tab-clock",
+  "author": {
+    "name": "Jordan Robinson",
+    "email": "me@jordanrobinson.co.uk",
+    "url": "http://jordanrobinson.co.uk/"
+  },
+  "contributors": [
+    {
+      "name": "Daniel Furze",
+      "email": "daniel@furzeface.com",
+      "url": "http://daniel.furzeface.com"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.x",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-combine-mq": "^0.2.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^0.7.0",
+    "grunt-notify": "^0.3.0",
+    "grunt-todo": "^0.4.0",
+    "jshint-stylish": "1.0.0",
+    "load-grunt-tasks": "^0.6.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}

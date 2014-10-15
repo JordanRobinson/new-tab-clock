@@ -18,22 +18,22 @@ body.setAttribute('style', 'background-color:#272822');
 
 container.setAttribute('style', //vertically centre that fool
 	'position: absolute;' +
-	'top: 50%;' + 
+	'top: 50%;' +
 	'margin-top: -200px;' +
 	'left: 0;' +
 	'width: 100%;');
 
-clockHolder.setAttribute('style', 
+clockHolder.setAttribute('style',
 	'font-size: 10rem;' +
-	'color: #dfdfdf;' + 
+	'color: #dfdfdf;' +
 	'width: 400px;' +
 	'margin: auto;' +
 	'height: 400px;' +
 	'font-weight: lighter;' +
 	'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif');
 
-// currentTime.setAttribute('style', 
-// 	'float: left;' + 
+// currentTime.setAttribute('style',
+// 	'float: left;' +
 // 	'width: 600px;' + //fix this
 // 	'border-bottom: 1px solid #FF4800;');
 
@@ -43,8 +43,8 @@ container.appendChild(clockHolder);
 body.appendChild(container);
 
 var update = function() {
-	var date = new Date()
-	var dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+	var date = new Date();
+	var dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
 	var millis = date.getMilliseconds();
 
 	currentTime.removeChild(timeText);
@@ -52,6 +52,6 @@ var update = function() {
 	currentTime.appendChild(timeText);
 
 	window.setTimeout(update, 1000 - millis);
-}
+};
 
 update();
