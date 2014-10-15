@@ -13,7 +13,7 @@ container = document.createElement('div'),
 currentTime = document.createElement('span'),
 timeText = document.createTextNode(' ');
 
-body.setAttribute('style', 'background-color:#262626');
+body.style.backgroundColor = '#262626';
 
 container.setAttribute('style',
   'color: #DFDFDF;' +
@@ -34,7 +34,13 @@ body.appendChild(container);
 var update = function () {
   var date = new Date(),
   dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1'),
-  millis = date.getMilliseconds();
+  millis = date.getMilliseconds(),
+  hour = (date.getHours() <= 9) ? '0' + date.getHours() : date.getHours(),
+  mins = (date.getMinutes() <= 9) ? '0' + date.getMinutes() : date.getMinutes(),
+  seconds = (date.getSeconds() <= 9) ? '0' + date.getSeconds() : date.getSeconds(),
+  hex = '#' + hour + mins + seconds;
+
+  body.style.backgroundColor = hex;
 
   currentTime.removeChild(timeText);
   timeText = document.createTextNode(dateString);
