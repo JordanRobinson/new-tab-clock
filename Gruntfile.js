@@ -71,7 +71,8 @@ module.exports = function(grunt) {
       },
       all: [
       '<%= config.src %>/**/*.{html,js,txt}',
-      '<%= config.gruntfile %>'
+      '<%= config.gruntfile %>',
+      'README.md'
       ]
     },
 

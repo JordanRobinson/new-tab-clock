@@ -4,8 +4,11 @@
 
 > Open tab! Receive clock!
 
+## Usage
+@TODO: update usage instructions.
+
 ## License
-Copyright (c) 2014 Jordan Robinson. 
+Copyright (c) 2014 [Jordan Robinson](http://jordanrobinson.co.uk). 
 
 Licensed under the MIT license.
 
