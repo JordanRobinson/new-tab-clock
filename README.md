@@ -20,7 +20,8 @@ $ npm install
 $ grunt
 ```
 
-Make changes in `src/`
+ * Make changes in `src/`
+ * Check out [Issues](https://github.com/JordanRobinson/new-tab-clock/issues) or run `$ grunt todo` to produce the [TODO list](https://github.com/JordanRobinson/new-tab-clock/blob/master/TODO.md)
 
 ## License
 Copyright (c) 2014 [Jordan Robinson](http://jordanrobinson.co.uk). 
