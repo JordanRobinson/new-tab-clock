@@ -197,8 +197,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build_scripts', [
     'clean:scripts',
     'jshint',
-    'copy:scripts',
-    'uglify'
+    'copy:scripts'/*,
+    'uglify'*/
     ]);
 
   grunt.registerTask('build_dev', [
