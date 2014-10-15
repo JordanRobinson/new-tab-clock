@@ -9,15 +9,13 @@
 // ==/UserScript==
 
 var body = document.getElementsByTagName('body')[0],
-container = document.createElement('div'),
-currentTime = document.createElement('span'),
-timeText = document.createTextNode(' ');
+container = document.createElement('time');
 
 body.style.backgroundColor = '#262626';
-
 container.setAttribute('style',
   'color: #DFDFDF;' +
-  'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;' +
+  // 'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif;' +
+  'font-family: Consolas, "Lucida Console", "Lucida Sans Typewriter", "Liberation Mono", "Courier New", Courier, monospace;' +
   'font-size: 10rem;' +
   'font-weight: lighter;' +
   // Vertically centre that fool!
@@ -27,8 +25,6 @@ container.setAttribute('style',
   'transform: translate(-50%,-50%);'
   );
 
-currentTime.appendChild(timeText);
-container.appendChild(currentTime);
 body.appendChild(container);
 
 var update = function () {
@@ -41,10 +37,7 @@ var update = function () {
   hex = '#' + hour + mins + seconds;
 
   body.style.backgroundColor = hex;
-
-  currentTime.removeChild(timeText);
-  timeText = document.createTextNode(dateString);
-  currentTime.appendChild(timeText);
+  container.innerHTML = dateString;
 
   window.setTimeout(update, 1000 - millis);
 };
