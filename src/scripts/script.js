@@ -8,11 +8,10 @@
 // @grant       none
 // ==/UserScript==
 
-var body = document.getElementsByTagName('body')[0];
-var container = document.createElement('div');
-var clockHolder = document.createElement('div');
-var currentTime = document.createElement('span');
-var timeText = document.createTextNode(' ');
+var body = document.getElementsByTagName('body')[0],
+container = document.createElement('div'),
+currentTime = document.createElement('span'),
+timeText = document.createTextNode(' ');
 
 body.setAttribute('style', 'background-color:#262626');
 
@@ -29,14 +28,13 @@ container.setAttribute('style',
   );
 
 currentTime.appendChild(timeText);
-clockHolder.appendChild(currentTime);
-container.appendChild(clockHolder);
+container.appendChild(currentTime);
 body.appendChild(container);
 
-var update = function() {
-	var date = new Date();
-	var dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
-	var millis = date.getMilliseconds();
+var update = function () {
+	var date = new Date(),
+	dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1'),
+	millis = date.getMilliseconds();
 
 	currentTime.removeChild(timeText);
 	timeText = document.createTextNode(dateString);
