@@ -16,26 +16,22 @@ var timeText = document.createTextNode(' ');
 
 body.setAttribute('style', 'background-color:#272822');
 
-container.setAttribute('style', //vertically centre that fool
-	'position: absolute;' +
-	'top: 50%;' +
-	'margin-top: -200px;' +
-	'left: 0;' +
-	'width: 100%;');
+container.setAttribute('style',
+  // Vertically centre that fool!
+  'position: absolute;' +
+  'top: 50%;' +
+  'left: 50%;' +
+  'text-align: center;' +
+  'transform: translate(-50%,-50%);' +
+  'width: 100%;'
+  );
 
 clockHolder.setAttribute('style',
+  'color: #DFDFDF;' +
+  'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif' +
 	'font-size: 10rem;' +
-	'color: #dfdfdf;' +
-	'width: 400px;' +
-	'margin: auto;' +
-	'height: 400px;' +
-	'font-weight: lighter;' +
-	'font-family: "Segoe UI","Trebuchet MS",Trebuchet,Verdana,Helvetica,Arial,sans-serif');
-
-// currentTime.setAttribute('style',
-// 	'float: left;' +
-// 	'width: 600px;' + //fix this
-// 	'border-bottom: 1px solid #FF4800;');
+  'font-weight: lighter;'
+  );
 
 currentTime.appendChild(timeText);
 clockHolder.appendChild(currentTime);
