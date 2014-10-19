@@ -5,7 +5,12 @@
 > Open tab! Receive clock!
 
 ## Usage
-@TODO: update usage instructions.
+
+![Opening a tab, getting you a clock](example-use.gif?raw=true)
+
+## Installing
+
+Currently the best way to use this is to install in [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and then [change your default new tab to be about:blank](https://support.mozilla.org/en-US/questions/954802)
 
 ## Contributing
 ```sh
