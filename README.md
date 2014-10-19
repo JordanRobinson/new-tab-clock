@@ -6,11 +6,11 @@
 
 ## Usage
 
-![Opening a tab, getting you a clock](example-use.gif?raw=true)
+![Opening a tab, getting you a clock][example-gif-image]
 
 ## Installing
 
-Currently the best way to use this is to install in [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) and then [change your default new tab to be about:blank](https://support.mozilla.org/en-US/questions/954802)
+Currently the best way to use this is to install in [Greasemonkey][greasemonkey-url] and then [change your default new tab to be about:blank][mozilla-about-blank-url]
 
 ## Contributing
 ```sh
@@ -37,3 +37,6 @@ Licensed under the [MIT license](https://github.com/JordanRobinson/new-tab-clock
 [travis-image]: https://secure.travis-ci.org/furzeface/new-tab-clock.svg?branch=master
 [dev-dependency-url]: https://david-dm.org/furzeface/new-tab-clock#info=devDependencies
 [dev-dependency-image]: https://david-dm.org/furzeface/new-tab-clock/dev-status.svg
+[greasemonkey-url]: https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/
+[mozilla-about-blank-url]: https://support.mozilla.org/en-US/questions/954802
+[example-gif-image]: example-use.gif?raw=true
