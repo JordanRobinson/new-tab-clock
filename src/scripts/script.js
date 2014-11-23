@@ -25,8 +25,6 @@ container.setAttribute('style',
   'transform: translate(-50%,-50%);'
   );
 
-body.appendChild(container);
-
 var update = function () {
   var date = new Date(),
   dateString = date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1'),
@@ -42,4 +40,15 @@ var update = function () {
   window.setTimeout(update, 1000 - millis);
 };
 
-update();
+var inIFrame = function () {
+    try {
+        return window.self !== window.top;
+    } catch (e) {
+        return true;
+    }
+}
+
+if (!inIFrame()) {
+  body.appendChild(container);
+  update();
+}
